@@ -1,11 +1,11 @@
 import Profile from '../profile/profile';
 import user from '../components/user.json';
 import Statistics from '../statistics/statistics';
-import data from '../components/data.json';
+import stats from '../components/stats.json';
 
 function App() {
   return (
-    (
+    <>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -16,8 +16,8 @@ function App() {
         views={user.stats.views}
         likes={user.stats.likes}
       />
-    ),
-    (<Statistics title="Upload stats" stats={data.stats} />)
+      <Statistics title="Upload stats" stats={stats} />
+    </>
   );
 }
 
