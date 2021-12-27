@@ -6,10 +6,11 @@ import Friendlist from '../friends/friends';
 import friends from '../components/friends.json';
 import TransactionHistory from '../transaction-history/transaction-history';
 import transactions from '../components/transactions.json';
+import { Container } from './app.styled';
 
 function App() {
   return (
-    <>
+    <Container>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -23,7 +24,7 @@ function App() {
       <Statistics title="Upload stats" stats={stats} />
       <Friendlist friends={friends} />
       <TransactionHistory items={transactions} />
-    </>
+    </Container>
   );
 }
 

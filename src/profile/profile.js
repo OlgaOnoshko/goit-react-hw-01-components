@@ -1,31 +1,41 @@
 import PropTypes from 'prop-types';
-// import ReactDOM from 'react-dom';
-// import user from '../components/user.json'
+import {
+  Image,
+  ProfileBox,
+  Description,
+  Name,
+  Tag,
+  Location,
+  Stats,
+  StatsItems,
+  StatsLabel,
+  StatsqQuantity,
+} from './profile.styled';
 
 function Profile({ username, tag, location, avatar, followers, views, likes }) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
-      </div>
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+    <ProfileBox>
+      <Description>
+        <Image src={avatar} alt="User avatar" class="avatar" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Description>
+      <Stats>
+        <StatsItems>
+          <StatsLabel>Followers</StatsLabel>
+          <StatsqQuantity>{followers}</StatsqQuantity>
+        </StatsItems>
+        <StatsItems>
+          <StatsLabel>Views</StatsLabel>
+          <StatsqQuantity>{views}</StatsqQuantity>
+        </StatsItems>
+        <StatsItems>
+          <StatsLabel>Likes</StatsLabel>
+          <StatsqQuantity>{likes}</StatsqQuantity>
+        </StatsItems>
+      </Stats>
+    </ProfileBox>
   );
 }
 
