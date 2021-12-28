@@ -16,7 +16,7 @@ function Profile({ username, tag, location, avatar, followers, views, likes }) {
   return (
     <ProfileBox>
       <Description>
-        <Image src={avatar} alt="User avatar" class="avatar" />
+        <Image src={avatar} alt="User avatar" />
         <Name>{username}</Name>
         <Tag>@{tag}</Tag>
         <Location>{location}</Location>

@@ -4,6 +4,7 @@ export const ProfileBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 250px;
+  margin-bottom: 40px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
   box-shadow: 8px 11px 19px -7px rgba(34, 60, 80, 0.2);
