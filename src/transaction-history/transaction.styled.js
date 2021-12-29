@@ -20,8 +20,8 @@ export const TD = styled.td`
   border: 1px solid #afb1b8;
 `;
 
-export const TableRow = styled.tr`
-  &:nth-child(odd) {
+export const TableBody = styled.tbody`
+  &:nth-of-type(2n) {
     background-color: lightgrey;
   }
 `;
