@@ -1,12 +1,5 @@
 import styled from '@emotion/styled';
 
-export const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 0px;
-`;
-
 export const ListItem = styled.li`
   position: relative;
   display: flex;
@@ -28,6 +21,7 @@ export const Status = styled.span`
     return isOnline ? 'green' : 'red';
   }};
 `;
+
 export const Image = styled.img`
   width: 40px;
   height: 40px;

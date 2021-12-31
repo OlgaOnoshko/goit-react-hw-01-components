@@ -8,8 +8,6 @@ export const Table = styled.table`
 `;
 
 export const TableHead = styled.thead`
-  /* padding: 100px;
-border-bottom: 1px solid #afb1b8; */
   background-color: green;
   font-size: 16px;
   color: white;

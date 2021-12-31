@@ -10,7 +10,7 @@ import {
 function Statistics({ title, stats }) {
   return (
     <StatBox>
-      {{ title } && <Title>{title}</Title>}
+      {title && <Title>{title}</Title>}
       <List>
         {stats.map(({ id, label, percentage }) => (
           <ListItem key={id}>

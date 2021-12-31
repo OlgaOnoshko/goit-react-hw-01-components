@@ -12,7 +12,7 @@ import {
   StatsqQuantity,
 } from './profile.styled';
 
-function Profile({ username, tag, location, avatar, followers, views, likes }) {
+function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfileBox>
       <Description>
@@ -24,15 +24,15 @@ function Profile({ username, tag, location, avatar, followers, views, likes }) {
       <Stats>
         <StatsItems>
           <StatsLabel>Followers</StatsLabel>
-          <StatsqQuantity>{followers}</StatsqQuantity>
+          <StatsqQuantity>{stats.followers}</StatsqQuantity>
         </StatsItems>
         <StatsItems>
           <StatsLabel>Views</StatsLabel>
-          <StatsqQuantity>{views}</StatsqQuantity>
+          <StatsqQuantity>{stats.views}</StatsqQuantity>
         </StatsItems>
         <StatsItems>
           <StatsLabel>Likes</StatsLabel>
-          <StatsqQuantity>{likes}</StatsqQuantity>
+          <StatsqQuantity>{stats.likes}</StatsqQuantity>
         </StatsItems>
       </Stats>
     </ProfileBox>
@@ -40,13 +40,17 @@ function Profile({ username, tag, location, avatar, followers, views, likes }) {
 }
 
 Profile.propTypes = {
-  avatar: PropTypes.string,
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }),
+  ),
 };
 
 export default Profile;
