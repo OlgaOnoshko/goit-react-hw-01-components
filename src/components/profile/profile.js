@@ -13,6 +13,7 @@ import {
 } from './profile.styled';
 
 function Profile({ username, tag, location, avatar, stats }) {
+  const { followers, views, likes } = stats;
   return (
     <ProfileBox>
       <Description>
@@ -24,15 +25,15 @@ function Profile({ username, tag, location, avatar, stats }) {
       <Stats>
         <StatsItems>
           <StatsLabel>Followers</StatsLabel>
-          <StatsqQuantity>{stats.followers}</StatsqQuantity>
+          <StatsqQuantity>{followers}</StatsqQuantity>
         </StatsItems>
         <StatsItems>
           <StatsLabel>Views</StatsLabel>
-          <StatsqQuantity>{stats.views}</StatsqQuantity>
+          <StatsqQuantity>{views}</StatsqQuantity>
         </StatsItems>
         <StatsItems>
           <StatsLabel>Likes</StatsLabel>
-          <StatsqQuantity>{stats.likes}</StatsqQuantity>
+          <StatsqQuantity>{likes}</StatsqQuantity>
         </StatsItems>
       </Stats>
     </ProfileBox>
@@ -44,13 +45,11 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    }),
-  ),
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
 
 export default Profile;
